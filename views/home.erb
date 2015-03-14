@@ -1,0 +1,41 @@
+<div class='form'>
+  <form action="/" method="post" >
+    <select  name="dungeon" >
+      <option value ="Table Mountain" >Table Mounatain</option>
+      <option value ="Final Puzzle" >Final Puzzle</option>
+      <option value ="Kitchen God Cave" >Kitchen God Cave</option>
+      <option value ="Scroll Cave" >Scroll Cave</option>
+      <option value ="Tainted Path" >Tainted Path</option>
+      <option value ="Ravine of the Dead" >Ravine of the Dead</option>
+      <option value ="Ceremonial Cave" >Ceremonial Cave</option>
+    </select></br>
+    <input type="text" name="killed_by" placeholder="Killed by?" ></br>
+    <input type="text" name="score" placeholder="Score" ></br>
+    <input type="text" name="level" placeholder="Level" ></br>
+    <input type="text" name="experience" placeholder="Experience" ></br>
+    <input type="text" name="hitpoints" placeholder="Hitpoints" ></br>
+    <input type="text" name="strength" placeholder="Strength" ></br>
+    <input type="text" name="gitans" placeholder="Gitans" ></br>
+    <input type="text" name="sword" placeholder="Sword" ></br>
+    <input type="text" name="shield" placeholder="Shield" ></br>
+    <input type="text" name="armband" placeholder="Armband" ></br>
+   <p>Completed?</p><input type="checkbox" name="complete" value="true"  ></br>
+    <input type="submit" >
+
+  </form>
+</div>
+<table border="1">
+  <th>Wanderer</th>
+  <th>Dungeon</th>
+  <th>Score</th>
+  <th>Completed</th>
+    <%  @run.each do |item|  %>
+  <tr>
+      <td> <p>User data here </p></td>
+      <td> <p><a href="/<%= item.id %>"><%= item.dungeon %></a></p></td>
+
+      <td> <p> <%= item.score %></p></td>
+      <td> <p> <%= item.complete ? "Yes" : "No" %></p></td>
+    <% end %>
+  </tr>
+</table>

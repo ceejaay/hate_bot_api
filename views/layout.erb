@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>Shiren The Wanderer</title>
+
+    <link rel="stylesheet" href="/stylesheet.css"</link>
+  </head>
+  <body>
+    <center>
+    <strong>Show scores by dungeon</strong></br>
+      <a href="<%= '/dungeons?title=Table Mountain' %>">Table Mountain</a>
+      <a href="<%= '/dungeons?title=Tainted Path' %>">Tainted Path</a>
+      <a href="<%= '/dungeons?title=Kitchen God Cave' %>">Kitchen God Cave</a>
+      <a href="<%= '/dungeons?title=Ravine of the Dead' %>">Ravine of the Dead</a>
+      <a href="<%= '/dungeons?title=Scroll Cave' %>">Scroll Cave</a>
+      <a href="<%= '/dungeons?title=Final Puzzle' %>">Final Puzzle</a>
+      <a href="<%= '/dungeons?title=Ceremonial Cave' %>">Ceremonial Cave</a>
+      <div class='main'>
+        <%= yield %>
+      </div>
+    </center>
+  </body>
+
+</html>
