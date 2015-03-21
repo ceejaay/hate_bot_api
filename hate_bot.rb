@@ -17,13 +17,9 @@ end
 
 
 get "/message" do #here is the data for the api get string => http://something/something/something"  do
-  erb :message 
-=begin
-  #message = HateBot.find(params[:id])
-  message = "hello world. This is the world where we live. We can do things where there are many things to be done."
-  return status 404 if message.nil?
-  message.to_json
-=end
+  number = repository(:default).adapter.select('SELECT COUNT(*) FROM hate_bots;')[0]
+  get_message = HateBot.get(rand(number + 1 ))
+  return get_message.message.to_json
 end
 
 
@@ -31,10 +27,12 @@ post "/new" do #'s where we have the address to send the post request." do
   @new_thing = HateBot.new
   @new_thing.message = params["message"] 
   @new_thing.save
-  return status 201
 
  
-  #here we put the code to save the message to the DB.
+end
+
+get "/" do
+  
 end
 
 
