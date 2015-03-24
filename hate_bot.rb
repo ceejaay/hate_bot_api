@@ -2,7 +2,8 @@ require 'sinatra'
 require 'json'
 require 'data_mapper'
 
-DataMapper.setup(:default, "postgres://localhost/hate_bot_master")
+#DataMapper.setup(:default, "postgres://localhost/hate_bot_master")
+DataMapper.setup(:default, "postgres://twngglxvavdxnp:D4FwN7X81frUmB-TmMLWRkbKgw@ec2-107-20-244-236.compute-1.amazonaws.com:5432/d9c4ea7oprk4n3")
 
 
 class HateBot
