@@ -16,23 +16,21 @@ DataMapper.finalize.auto_upgrade!
 end
 
 
-get "/message" do #here is the data for the api get string => http://something/something/something"  do
+get "/message" do 
   number = repository(:default).adapter.select('SELECT COUNT(*) FROM hate_bots;')[0]
   get_message = HateBot.get(rand(number + 1 ))
   return get_message.message.to_json
 end
 
 
-post "/new" do #'s where we have the address to send the post request." do
+post "/new" do 
   @new_thing = HateBot.new
   @new_thing.message = params["message"] 
-  @new_thing.save
-
- 
+  @new_thing.save 
 end
 
 get "/" do
-  
+  '<center>Send GET request to hatebot via http://localhost/message</br> Send a POST request via http://localhost/new</center>'
 end
 
 
