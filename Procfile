@@ -1,1 +1,1 @@
-web: bundle exec rackup hate_bot.rb -p $PORT
+web: bundle exec ruby hate_bot.rb -p $PORT
