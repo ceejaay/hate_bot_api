@@ -2,7 +2,8 @@ require 'sinatra'
 require 'json'
 require 'data_mapper'
 
-DataMapper.setup(:default, "postgres://localhost/hate_bot_master")
+#DataMapper.setup(:default, "postgres://localhost/hate_bot_master")
+DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_COBALT'])
 
 
 class HateBot
